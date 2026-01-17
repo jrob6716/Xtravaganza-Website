@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Futuristic HUD background (grid + subtle cyan traces) */
+.hud-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.hud-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(127,220,255,0.12), transparent 46%),
+    radial-gradient(circle at 78% 58%, rgba(127,220,255,0.10), transparent 52%),
+    radial-gradient(circle at 50% 0%, rgba(127,220,255,0.08), transparent 42%);
+  opacity: 1;
+  pointer-events: none;
+  z-index: -3;
+}
+
+.hud-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    /* fine grid */
+    linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px),
+    /* larger grid */
+    linear-gradient(rgba(127,220,255,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127,220,255,0.10) 1px, transparent 1px);
+  background-size:
+    40px 40px,
+    40px 40px,
+    200px 200px,
+    200px 200px;
+  background-position:
+    0 0,
+    0 0,
+    10px 10px,
+    10px 10px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* HUD "traces" — thin cyan scan segments */
+.hud-traces {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+.hud-traces::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(127,220,255,0.35) 50%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%),
+    radial-gradient(circle at 12% 42%, rgba(127,220,255,0.35), transparent 35%),
+    radial-gradient(circle at 70% 18%, rgba(127,220,255,0.22), transparent 40%);
+  background-size: 900px 2px, 700px 1px, 520px 520px, 680px 680px;
+  background-repeat: no-repeat;
+  background-position: 50% 120px, 52% 280px, 12% 32%, 76% 10%;
+  opacity: 0.35;
+}
+
+@keyframes drift {
+  0% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,-12px,0); }
+  100% { transform: translate3d(0,0,0); }
+}
+
+.hud-drift {
+  animation: drift 10s ease-in-out infinite;
+}
+
+/* Subtle scanlines */
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.06) 0px,
+    rgba(255,255,255,0.06) 1px,
+    rgba(0,0,0,0) 2px,
+    rgba(0,0,0,0) 4px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+/* Soft grain */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  opacity: 0.07;
+  pointer-events: none;
+  transform: rotate(2deg);
+}
+
+/* A tiny “CRT jitter” on hover */
+@keyframes jitter {
+  0%, 100% { transform: translate3d(0,0,0); }
+  20% { transform: translate3d(0.5px, -0.5px, 0); }
+  40% { transform: translate3d(-0.5px, 0.5px, 0); }
+  60% { transform: translate3d(0.5px, 0.25px, 0); }
+  80% { transform: translate3d(-0.25px, -0.5px, 0); }
+}
+
+.jitter:hover {
+  animation: jitter 200ms linear 1;
+}
