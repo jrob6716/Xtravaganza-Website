@@ -26,6 +26,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: xtravaganza_recordings_site/package-lock.json
 
       - name: Install
         working-directory: xtravaganza_recordings_site
