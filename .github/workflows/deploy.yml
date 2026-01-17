@@ -14,10 +14,6 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
-defaults:
-  run:
-    working-directory: xtravaganza_recordings_site
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,15 +28,17 @@ jobs:
           cache: npm
 
       - name: Install
+        working-directory: xtravaganza_recordings_site
         run: npm ci
 
       - name: Build
+        working-directory: xtravaganza_recordings_site
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./xtravaganza_recordings_site/dist
+          path: xtravaganza_recordings_site/dist
 
   deploy:
     needs: build
