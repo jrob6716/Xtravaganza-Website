@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // GitHub Pages base path (repo name)
 export default defineConfig({
   plugins: [react()],
-  base: '/xtravaganza_recordings/',
+  // Must match the GitHub repo name for correct asset paths on Pages
+  base: '/Xtravaganza-Website/',
 })
