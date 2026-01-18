@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Eye Logo */}
-      <section className="relative pt-8 pb-8 md:pt-16 md:pb-12">
+      <section className="relative pt-6 pb-6 sm:pt-8 sm:pb-8 md:pt-16 md:pb-12 px-4">
         <motion.div
           initial="hidden"
           animate="show"
@@ -79,19 +79,19 @@ export default function Home() {
             <img
               src={eyeMark}
               alt="XTRAVAGANZA Eye"
-              className="w-96 md:w-[32rem] lg:w-[40rem] eye-glow"
+              className="w-64 sm:w-80 md:w-[32rem] lg:w-[40rem] eye-glow"
             />
           </motion.div>
         </motion.div>
       </section>
 
       {/* Horizontal tech line divider */}
-      <div className="relative max-w-4xl mx-auto px-8 my-8">
+      <div className="relative max-w-4xl mx-auto px-6 sm:px-8 my-8">
         <div className="tech-line-h" />
       </div>
 
       {/* The Future of Electronic Music Section */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-10 md:py-12 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,12 +99,12 @@ export default function Home() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex justify-center mb-6">
-            <h2 className="font-orbitron text-xl md:text-2xl lg:text-3xl tracking-[0.1em] font-semibold text-white whitespace-nowrap">
+            <h2 className="font-orbitron text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[0.1em] font-semibold text-white text-center">
               THE PAST, PRESENT AND FUTURE OF ELECTRONIC DANCE MUSIC
             </h2>
           </div>
           
-          <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-4xl mb-8">
+          <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-4xl mb-8 text-center sm:text-left">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
           </p>
           
@@ -115,19 +115,19 @@ export default function Home() {
       </section>
 
       {/* New Releases Section */}
-      <section id="releases" className="relative px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
+      <section id="releases" className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-10 md:py-12 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-orbitron text-xl md:text-2xl tracking-[0.1em] font-semibold text-white mb-8">
+          <h2 className="font-orbitron text-lg sm:text-xl md:text-2xl tracking-[0.1em] font-semibold text-white mb-6 md:mb-8">
             NEW RELEASES
           </h2>
           
           {/* Release Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8">
             {/* Alex Gold - Baleric Infinity */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -136,14 +136,14 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="album-card bg-dark-800/50 overflow-hidden group"
             >
-              <div className="relative aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 flex items-center justify-center overflow-hidden">
-                <img
-                  src={alexGoldCover}
-                  alt="ALEX GOLD - BALERIC INFINITY"
+               <div className="relative aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 flex items-center justify-center overflow-hidden">
+                 <img
+                    src={alexGoldCover}
+                    alt="ALEX GOLD - BALERIC INFINITY"
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                 />
               </div>
-              <div className="p-4 md:p-6">
+               <div className="p-4 md:p-6">
                 <h3 className="font-orbitron text-sm md:text-base tracking-[0.1em] font-bold text-white">
                   ALEX GOLD
                 </h3>

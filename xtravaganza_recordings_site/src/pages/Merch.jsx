@@ -51,7 +51,7 @@ export default function Merch() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,12 +67,12 @@ export default function Merch() {
       </section>
 
       {/* Horizontal tech line divider */}
-      <div className="relative max-w-6xl mx-auto px-6 md:px-12 lg:px-20 my-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 my-8">
         <div className="tech-line-h" />
       </div>
 
       {/* Merch Grid */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {merchItems.map((item, idx) => (
             <motion.div
@@ -111,20 +111,20 @@ export default function Merch() {
               </div>
 
               {/* Details */}
-              <div className="p-4 md:p-5 space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="font-orbitron text-sm md:text-base tracking-[0.1em] font-bold text-white group-hover:text-frost transition-colors">
-                    {item.name}
-                  </h3>
-                  <span className="font-orbitron text-xs text-frost">{item.price}</span>
-                </div>
-                <p className="text-white/60 text-xs md:text-sm leading-relaxed">
-                  {item.description}
-                </p>
-                <button className="mt-2 inline-flex items-center gap-2 px-4 py-2 text-[10px] tracking-[0.15em] uppercase font-orbitron border border-frost/30 text-white/90 bg-transparent hover:border-frost/50 hover:bg-frost/5 transition-all duration-300">
-                  Add to Cart
-                  <span>→</span>
-                </button>
+               <div className="p-4 md:p-5 space-y-2">
+                 <div className="flex items-center justify-between gap-2">
+                   <h3 className="font-orbitron text-sm md:text-base tracking-[0.1em] font-bold text-white group-hover:text-frost transition-colors">
+                     {item.name}
+                   </h3>
+                   <span className="font-orbitron text-xs text-frost">{item.price}</span>
+                 </div>
+                 <p className="text-white/60 text-xs md:text-sm leading-relaxed">
+                   {item.description}
+                 </p>
+                 <button className="mt-2 inline-flex items-center gap-2 px-4 py-2 text-[10px] tracking-[0.15em] uppercase font-orbitron border border-frost/30 text-white/90 bg-transparent hover:border-frost/50 hover:bg-frost/5 transition-all duration-300">
+                   Add to Cart
+                   <span>→</span>
+                 </button>
               </div>
             </motion.div>
           ))}
@@ -132,7 +132,7 @@ export default function Merch() {
       </section>
 
       {/* CTA */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -19,7 +19,7 @@ export default function Mix() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,12 +35,12 @@ export default function Mix() {
       </section>
 
       {/* Horizontal tech line divider */}
-      <div className="relative max-w-6xl mx-auto px-6 md:px-12 lg:px-20 my-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 my-8">
         <div className="tech-line-h" />
       </div>
 
       {/* Mix Embeds */}
-      <section className="relative px-6 md:px-12 lg:px-20 pb-12 max-w-6xl mx-auto space-y-8">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 pb-12 max-w-6xl mx-auto space-y-6 md:space-y-8">
         {mixes.map((mix, idx) => (
           <motion.div
             key={mix.title}
@@ -53,7 +53,7 @@ export default function Mix() {
             <h3 className="font-orbitron text-sm md:text-base tracking-[0.1em] font-semibold text-white mb-3">
               {mix.title}
             </h3>
-            <div className="relative pb-[166px] md:pb-[166px] lg:pb-[140px]">
+            <div className="relative pb-[60%] sm:pb-[62%] md:pb-[166px] lg:pb-[140px]">
               <iframe
                 title={mix.title}
                 className="absolute inset-0 w-full h-full"

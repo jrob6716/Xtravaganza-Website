@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import eyeMark from '../assets/eye-mark.png'
@@ -27,6 +28,7 @@ function CircuitLines({ side = 'left', className = '' }) {
 // Navigation component
 function Navigation() {
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
   
   const navItems = [
     { path: '/', label: 'HOME' },
@@ -40,18 +42,18 @@ function Navigation() {
   
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-sm border-b border-frost/10">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-12">
-        <div className="flex items-center justify-between gap-4 h-16 md:h-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="flex items-center justify-between gap-3 h-14 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
             <img src={eyeMark} alt="XTRAVAGANZA" className="h-8 md:h-10 eye-glow" />
             <span className="font-orbitron text-[11px] sm:text-xs md:text-sm tracking-[0.08em] font-bold text-white hidden sm:block">
               XTRAVAGANZA
             </span>
           </Link>
-          
-          {/* Nav Links */}
-          <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-right">
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex flex-wrap items-center justify-end gap-4 md:gap-6 lg:gap-8 text-right">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -66,8 +68,43 @@ function Navigation() {
               </Link>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 border border-frost/30 text-white/80 hover:border-frost/50 hover:text-white transition-colors"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle navigation"
+          >
+            <div className="space-y-1.5">
+              <span className={`block h-0.5 w-5 bg-current transition-transform ${menuOpen ? 'translate-y-2 rotate-45' : ''}`} />
+              <span className={`block h-0.5 w-5 bg-current transition-opacity ${menuOpen ? 'opacity-0' : 'opacity-80'}`} />
+              <span className={`block h-0.5 w-5 bg-current transition-transform ${menuOpen ? '-translate-y-2 -rotate-45' : ''}`} />
+            </div>
+          </button>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {menuOpen && (
+        <div className="md:hidden bg-dark-900/95 backdrop-blur-sm border-t border-frost/10">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setMenuOpen(false)}
+                className={`font-orbitron text-xs tracking-[0.14em] py-2 border-b border-white/5 ${
+                  location.pathname === item.path
+                    ? 'text-frost'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

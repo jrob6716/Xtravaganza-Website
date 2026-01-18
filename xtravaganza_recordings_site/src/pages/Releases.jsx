@@ -71,7 +71,7 @@ export default function Releases() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export default function Releases() {
       </section>
 
       {/* Filter Tabs */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-4 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -110,13 +110,13 @@ export default function Releases() {
       </section>
 
       {/* Horizontal tech line divider */}
-      <div className="relative max-w-6xl mx-auto px-6 md:px-12 lg:px-20 my-6">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 my-6">
         <div className="tech-line-h" />
       </div>
 
       {/* Releases Grid */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {allReleases.map((release, idx) => (
             <motion.div
               key={`${release.artist}-${release.title}`}
@@ -154,7 +154,7 @@ export default function Releases() {
               </div>
               
               {/* Release Info */}
-              <div className="p-4 md:p-5">
+               <div className="p-4 md:p-5">
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <h3 className="font-orbitron text-sm md:text-base tracking-[0.1em] font-bold text-white group-hover:text-frost transition-colors">
@@ -175,7 +175,7 @@ export default function Releases() {
       </section>
 
       {/* Load More */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
         <div className="flex justify-center">
           <button className="inline-flex items-center gap-2 px-8 py-3 text-xs tracking-[0.2em] uppercase font-orbitron transition-all duration-300 btn-cyber border border-frost/30 bg-transparent text-white/90 hover:border-frost/50 hover:bg-frost/5">
             Load More Releases
@@ -185,7 +185,7 @@ export default function Releases() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

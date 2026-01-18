@@ -19,7 +19,7 @@ export default function Artists() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 pt-8 pb-4 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,13 +35,13 @@ export default function Artists() {
       </section>
 
       {/* Horizontal tech line divider */}
-      <div className="relative max-w-6xl mx-auto px-6 md:px-12 lg:px-20 my-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 my-8">
         <div className="tech-line-h" />
       </div>
 
       {/* Artists Grid */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {allArtists.map((artist, idx) => (
             <motion.div
               key={artist.name}
@@ -66,11 +66,11 @@ export default function Artists() {
                 <div className="absolute inset-0 bg-frost/0 group-hover:bg-frost/5 transition-all duration-300" />
                 
                 {/* Artist Name - Overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 text-center bg-gradient-to-t from-black/80 to-transparent">
-                  <h3 className="font-orbitron text-xs md:text-sm tracking-[0.1em] font-medium text-white group-hover:text-frost transition-colors">
-                    {artist.name}
-                  </h3>
-                </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 text-center bg-gradient-to-t from-black/80 to-transparent">
+                    <h3 className="font-orbitron text-[11px] sm:text-xs md:text-sm tracking-[0.1em] font-medium text-white group-hover:text-frost transition-colors">
+                      {artist.name}
+                    </h3>
+                  </div>
               </div>
             </motion.div>
           ))}
@@ -78,7 +78,7 @@ export default function Artists() {
       </section>
 
       {/* Call to Action */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
