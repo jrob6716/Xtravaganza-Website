@@ -10,7 +10,8 @@ import Mix from './pages/Mix'
 
 export default function App() {
   return (
-    <Router>
+    // Basename matches GitHub Pages repo for client-side routing
+    <Router basename="/Xtravaganza-Website">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
