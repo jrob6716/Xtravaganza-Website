@@ -150,7 +150,7 @@ export default function Releases() {
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className="album-card bg-dark-800/50 overflow-hidden group cursor-pointer"
             >
-              {/* Cover Image */}
+              {/* Cover Image (no top text overlay) */}
               <div className="relative aspect-square bg-gradient-to-br from-dark-700 to-dark-900 overflow-hidden">
                 <img
                   src={release.image}
