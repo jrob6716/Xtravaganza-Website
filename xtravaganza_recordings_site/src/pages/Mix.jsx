@@ -2,16 +2,28 @@ import { motion } from 'framer-motion'
 
 const mixes = [
   {
-    title: 'Alex Gold Xtravaganza Mix Show',
-    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/alex-gold-xtravaganza-mix-show%3Fsi%3D09c939c1bd824cb8b7d2387bab109287%26utm_source%3Dclipboard%26utm_medium%3Dtext%26utm_campaign%3Dsocial_sharing&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
+    title: 'Xtravaganza Mix Show 006 — Alex Gold',
+    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/xtravaganza-mix-show-006-alex-gold&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
   },
   {
-    title: 'M3TTA in for Alex Gold',
-    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/m3tta-in-for-alex-gold-the%3Fsi%3Dace47e18ca8543bb95418920181a6da7%26utm_source%3Dclipboard%26utm_medium%3Dtext%26utm_campaign%3Dsocial_sharing&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
+    title: 'Xtravaganza Mix Show 005 — Guest: M3TTA',
+    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/xtravaganza-mix-show-005-guest-m3tta&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
   },
   {
-    title: 'Alex Gold Xtravaganza Mix 1',
-    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/alex-gold-xtravaganza-mix-1%3Fsi%3Db81035f0c5724583827d0fe2a0a1ed9e%26utm_source%3Dclipboard%26utm_medium%3Dtext%26utm_campaign%3Dsocial_sharing&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
+    title: 'Xtravaganza Mix Show 004 — Alex Gold',
+    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/xtravaganza-mix-show-004-alex-gold&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
+  },
+  {
+    title: 'Xtravaganza Mix Show 003 — Alex Gold',
+    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/xtravaganza-mix-show-003-alex-gold&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
+  },
+  {
+    title: 'Xtravaganza Mix Show 002 — Alex Gold',
+    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/xtravaganza-mix-show-002-alex-gold&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
+  },
+  {
+    title: 'Xtravaganza Mix Show 001 — Alex Gold',
+    embed: 'https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexgold-xtravaganza/xtravaganza-mix-show-001-alex-gold&color=%2300d6ff&inverse=false&auto_play=false&show_user=true'
   }
 ]
 
