@@ -1,67 +1,91 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import alexGoldCover from '../assets/paul-van-dyk-another-way.png'
-import m3ttaCover from '../assets/m3tta-cover.png'
-import eyeMark from '../assets/eye-mark.png'
 
-// Extended releases list
+// Xtravaganza catalog highlights with external cover art
 const allReleases = [
   {
-    artist: 'ALEX GOLD',
-    title: 'BALERIC INFINITY',
-    year: '2024',
-    image: alexGoldCover,
-    tag: 'NEW'
+    artist: 'CHICANE',
+    title: 'SALTWATER',
+    year: '1999',
+    image: 'https://i.scdn.co/image/ab67616d0000b2739e96c7e0c89eacdd5bdf4b77',
+    tag: 'CLASSIC'
   },
   {
-    artist: 'M3TTA',
-    title: 'A BEAUTIFUL LIFE',
-    year: '2024',
-    image: m3ttaCover,
-    tag: 'NEW'
-  },
-  {
-    artist: 'PAUL VAN DYK',
-    title: 'ANOTHER WAY',
-    year: '2023',
-    image: eyeMark,
+    artist: 'VERACOCHA',
+    title: 'CARTE BLANCHE',
+    year: '1999',
+    image: 'https://i.scdn.co/image/ab67616d0000b2739c6c226ae43ee2b8f2b57502',
     tag: 'CLASSIC'
   },
   {
     artist: 'BINARY FINARY',
     title: '1999',
-    year: '2023',
-    image: eyeMark,
-    tag: 'REMASTER'
+    year: '1998',
+    image: 'https://i.scdn.co/image/ab67616d0000b273a2d0bbd10b191ed257a7b82d',
+    tag: 'CLASSIC'
   },
   {
     artist: 'AGNELLI & NELSON',
-    title: 'EL NINO',
-    year: '2023',
-    image: eyeMark,
-    tag: null
+    title: 'EL NIÑO',
+    year: '1998',
+    image: 'https://i.scdn.co/image/ab67616d0000b273f5cb9184160a95c31a01d10b',
+    tag: 'CLASSIC'
   },
   {
-    artist: 'CHICANE',
-    title: 'SALTWATER',
-    year: '2023',
-    image: eyeMark,
+    artist: 'PAUL VAN DYK',
+    title: 'ANOTHER WAY',
+    year: '1998',
+    image: 'https://i.scdn.co/image/ab67616d0000b273a25dd1d75bd9050bc0f25bf3',
+    tag: 'CLASSIC'
+  },
+  {
+    artist: 'SOLAR STONE',
+    title: 'SEVEN CITIES',
+    year: '1999',
+    image: 'https://i.scdn.co/image/ab67616d0000b273d9b318626a9e3b71c0086511',
+    tag: 'CLASSIC'
+  },
+  {
+    artist: 'YORK',
+    title: 'ON THE BEACH',
+    year: '1999',
+    image: 'https://i.scdn.co/image/ab67616d0000b2731b3b7084ff57c4b6213b5636',
+    tag: 'CLASSIC'
+  },
+  {
+    artist: 'SIGNUM',
+    title: 'WHAT YA GOT 4 ME',
+    year: '1997',
+    image: 'https://i.scdn.co/image/ab67616d0000b273adb4e49c9fca4814426f05c5',
+    tag: 'CLASSIC'
+  },
+  {
+    artist: 'ART OF TRANCE',
+    title: 'MADAGASCAR (FERRY CORSTEN REMIX)',
+    year: '1999',
+    image: 'https://i.scdn.co/image/ab67616d0000b2730b6626900b8f58bd2d96ff47',
     tag: 'REMIX'
   },
   {
-    artist: 'VERACOCHA',
-    title: 'CARTE BLANCHE',
-    year: '2022',
-    image: eyeMark,
-    tag: null
+    artist: 'MATT DAREY',
+    title: 'LIBERATION (FLY LIKE AN ANGEL)',
+    year: '1999',
+    image: 'https://i.scdn.co/image/ab67616d0000b273c9e7ae3d70e9d68e0cd5a2dd',
+    tag: 'CLASSIC'
   },
   {
-    artist: 'PULSER',
-    title: 'MY RELIGION',
-    year: '2022',
-    image: eyeMark,
-    tag: null
+    artist: 'THREE DRIVES',
+    title: 'GREECE 2000',
+    year: '1997',
+    image: 'https://i.scdn.co/image/ab67616d0000b273f45810cf5ba2d08fa6e200f4',
+    tag: 'CLASSIC'
   },
+  {
+    artist: 'AGNELLI & NELSON',
+    title: 'EVERYDAY',
+    year: '2000',
+    image: 'https://i.scdn.co/image/ab67616d0000b2734d7514514a1cb43f8e81273f',
+    tag: 'CLASSIC'
+  }
 ]
 
 // Filter tabs
