@@ -22,7 +22,7 @@ const contactInfo = [
 
 // Social links
 const socialLinks = [
-  { name: 'INSTAGRAM', url: '#' },
+  { name: 'INSTAGRAM', url: 'https://www.instagram.com/xtravaganza_recordings/' },
   { name: 'SPOTIFY', url: 'https://open.spotify.com/user/pe9h8m660h6z7wy76yw8580jf?si=fb3db787ae7f42a6' },
   { name: 'YOUTUBE', url: 'https://www.youtube.com/@xtravaganzatv' },
 ]
