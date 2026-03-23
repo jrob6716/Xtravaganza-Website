@@ -23,10 +23,8 @@ const contactInfo = [
 // Social links
 const socialLinks = [
   { name: 'INSTAGRAM', url: '#' },
-  { name: 'TWITTER', url: '#' },
-  { name: 'SOUNDCLOUD', url: '#' },
-  { name: 'SPOTIFY', url: '#' },
-  { name: 'YOUTUBE', url: '#' },
+  { name: 'SPOTIFY', url: 'https://open.spotify.com/user/pe9h8m660h6z7wy76yw8580jf?si=fb3db787ae7f42a6' },
+  { name: 'YOUTUBE', url: 'https://www.youtube.com/@xtravaganzatv' },
 ]
 
 export default function Contact() {
