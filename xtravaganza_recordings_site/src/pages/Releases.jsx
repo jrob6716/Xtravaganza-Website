@@ -102,17 +102,14 @@ export default function Releases() {
           <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-3xl">
             Explore the Xtravaganza Recordings catalog, from landmark trance releases to the label&apos;s latest electronic music.
           </p>
-          <p className="mt-3 font-orbitron text-[10px] tracking-[0.12em] text-frost/70">
-            {releases.length} RELEASES · CATALOG DATA &amp; ARTWORK VIA{' '}
-            <a
-              href="https://www.discogs.com/label/2299-Xtravaganza-Recordings"
-              target="_blank"
-              rel="noreferrer"
-              className="underline underline-offset-4 hover:text-frost transition-colors"
-            >
-              DISCOGS ↗
-            </a>
-          </p>
+          <a
+            href="https://www.discogs.com/label/2299-Xtravaganza-Recordings"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-3 font-orbitron text-[10px] tracking-[0.12em] text-frost/70 underline underline-offset-4 hover:text-frost transition-colors"
+          >
+            {releases.length} RELEASES · VIEW COMPLETE CATALOG ↗
+          </a>
         </motion.div>
       </section>
 
@@ -271,8 +268,9 @@ export default function Releases() {
               onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
               className="inline-flex items-center gap-2 px-8 py-3 text-xs tracking-[0.2em] uppercase font-orbitron transition-all duration-300 btn-cyber border border-frost/30 bg-transparent text-white/90 hover:border-frost/50 hover:bg-frost/5"
             >
-              Load More ({Math.min(PAGE_SIZE, remainingCount)})
-              <span aria-hidden="true">↓</span>
+              {remainingCount <= PAGE_SIZE
+                ? `Load Final ${remainingCount} Releases`
+                : `Load ${PAGE_SIZE} More Releases`}
             </button>
           </div>
         </section>
