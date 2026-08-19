@@ -12,6 +12,53 @@ body {
   overflow-x: hidden;
 }
 
+/* Keep the circuit world vivid in the hero, then let it recede behind content. */
+.circuit-atmosphere {
+  transition: opacity 0.4s ease;
+}
+
+.circuit-atmosphere-home {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 38%,
+    rgba(0, 0, 0, 0.55) 66%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 38%,
+    rgba(0, 0, 0, 0.55) 66%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
+}
+
+.circuit-atmosphere-interior {
+  opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  .circuit-atmosphere-home {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      rgba(0, 0, 0, 0.72) 42%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      rgba(0, 0, 0, 0.72) 42%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+
+  .circuit-atmosphere-interior {
+    opacity: 0.38;
+  }
+}
+
 /* Scanlines overlay */
 .scanlines::before {
   content: "";

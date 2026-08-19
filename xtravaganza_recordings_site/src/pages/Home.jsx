@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import eyeMark from '../assets/round-eye-logo.png'
-import alexGoldCover from '../assets/paul-van-dyk-another-way.png'
-import m3ttaCover from '../assets/m3tta-cover.png'
-import { artists } from '../data/content'
 
 // Animation variants
 const fadeIn = {
@@ -104,9 +101,23 @@ export default function Home() {
             </h2>
           </div>
           
-          <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-4xl mb-8 text-center sm:text-left">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-          </p>
+          <div className="text-white/60 text-sm md:text-base leading-relaxed max-w-4xl mb-8 space-y-4 text-center sm:text-left">
+            <p>
+              Xtravaganza Recordings is a European Electronic Music label founded in 1996 by legendary music producer and entrepreneur Alex Gold.
+            </p>
+            <p>
+              At one time or another in the past 30 years Xtravaganza signings have included some of the greatest names in Dance music today including the likes of Tiësto, Paul Van Dyk, Above &amp; Beyond, Adam K, Chicane, Andy C (Big C) of Groove Armada, David Tort, Chris Lake, Dehasse and Armin Van Buren who started his celebrated career with Xtravaganza in 1997 with a track entitled Blue Fear.
+            </p>
+            <p>
+              Xtravaganza has sold over 15 million units since inception and been involved in 2 UK No 1 hit records. One rather famously with Chicane featuring Bryan Adams in March 2000.
+            </p>
+            <p>
+              Alex Gold and Xtravaganza were instrumental in creating the Ibiza Scene we know today and both Gold and Xtravaganza have held residency at premier world-renowned clubs Privilege and Space In Ibiza.
+            </p>
+            <p>
+              Xtravaganza is famed with a melodic uplifting cosmopolitan sound always accessible and never to distant.
+            </p>
+          </div>
           
           <CyberButton to="/releases">
             View All Releases
@@ -114,137 +125,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* New Releases Section */}
-      <section id="releases" className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-10 md:py-12 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="font-orbitron text-lg sm:text-xl md:text-2xl tracking-[0.1em] font-semibold text-white mb-6 md:mb-8">
-            NEW RELEASES
-          </h2>
-          
-          {/* Release Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8">
-            {/* Alex Gold - Baleric Infinity */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="album-card bg-dark-800/50 overflow-hidden group"
-            >
-               <div className="relative aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 flex items-center justify-center overflow-hidden">
-                 <img
-                    src={alexGoldCover}
-                    alt="ALEX GOLD - BALERIC INFINITY"
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
-               <div className="p-4 md:p-6">
-                <h3 className="font-orbitron text-sm md:text-base tracking-[0.1em] font-bold text-white">
-                  ALEX GOLD
-                </h3>
-                <p className="font-orbitron text-xs md:text-sm tracking-[0.05em] text-white/60 mt-1">
-                  BALERIC INFINITY
-                </p>
-              </div>
-            </motion.div>
-
-            {/* M3TTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="album-card bg-dark-800/50 overflow-hidden group"
-            >
-              <div className="relative aspect-[4/3] bg-gradient-to-b from-dark-700 via-dark-800 to-dark-900 flex items-center justify-center overflow-hidden">
-                <img
-                  src={m3ttaCover}
-                  alt="M3TTA - A BEAUTIFUL LIFE"
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <div className="p-4 md:p-6">
-                <h3 className="font-orbitron text-sm md:text-base tracking-[0.1em] font-bold text-white">
-                  M3TTA
-                </h3>
-                <p className="font-orbitron text-xs md:text-sm tracking-[0.05em] text-white/60 mt-1">
-                  A BEAUTIFUL LIFE
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* View All Releases Button */}
-          <CyberButton to="/releases" className="group">
-            View All Releases
-            <span className="transition-transform group-hover:translate-x-1">→</span>
-          </CyberButton>
-
-          {/* Decorative numbers */}
-          <div className="hidden md:block absolute right-12 lg:right-20 top-1/2 font-orbitron text-3xl tracking-[0.2em] text-frost/20">
-            2-351
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Artists Section */}
-      <section id="artists" className="relative px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="font-orbitron text-xl md:text-2xl tracking-[0.1em] font-semibold text-white mb-8">
-            ARTISTS
-          </h2>
-          
-          {/* Artists Grid - 4 columns */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
-            {artists.map((artist, idx) => (
-              <motion.div
-                key={artist.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="artist-card bg-dark-800/30 overflow-hidden group aspect-square"
-              >
-                {/* Artist Photo Placeholder - Full square */}
-                <div className="relative w-full h-full bg-gradient-to-b from-dark-700 to-dark-900 overflow-hidden">
-                  {/* Placeholder gradient pattern */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-frost/5 to-transparent" />
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(255,255,255,0.1),transparent_60%)]" />
-                  
-                  {/* Silhouette placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-3/4 h-3/4 bg-gradient-to-b from-white/10 to-transparent rounded-t-full" />
-                  </div>
-                  
-                  {/* Artist Name - Overlay at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center bg-gradient-to-t from-black/80 to-transparent">
-                    <h3 className="font-orbitron text-xs md:text-sm tracking-[0.1em] font-medium text-white">
-                      {artist.name}
-                    </h3>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* View All Artists Button */}
-          <div className="flex justify-center">
-            <CyberButton to="/artists">
-              View All Artists
-            </CyberButton>
-          </div>
-        </motion.div>
-      </section>
     </>
   )
 }

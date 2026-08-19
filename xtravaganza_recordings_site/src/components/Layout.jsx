@@ -131,10 +131,17 @@ function Footer() {
 }
 
 export default function Layout({ children }) {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
   return (
     <div className="min-h-screen bg-dark-900 text-white font-body overflow-hidden">
       {/* Background layers */}
-      <div className="pointer-events-none fixed inset-0">
+      <div
+        className={`pointer-events-none fixed inset-0 circuit-atmosphere ${
+          isHome ? 'circuit-atmosphere-home' : 'circuit-atmosphere-interior'
+        }`}
+      >
         {/* Dark gradient base */}
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-black" />
         
