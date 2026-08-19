@@ -31,12 +31,11 @@ function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false)
   
   const navItems = [
-    { path: '/', label: 'HOME' },
     { path: '/releases', label: 'RELEASES' },
     { path: '/artists', label: 'ARTISTS' },
-    { path: '/merch', label: 'MERCH STORE' },
-    { href: 'https://soundcloud.com/alexgold-xtravaganza', label: 'THE XTRAVAGANZA MIX' },
+    { href: 'https://soundcloud.com/alexgold-xtravaganza', label: 'MIX ↗' },
     { path: '/about', label: 'ABOUT' },
+    { path: '/merch', label: 'SHOP' },
     { path: '/contact', label: 'CONTACT' },
   ]
   
@@ -53,13 +52,19 @@ function Navigation() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex flex-wrap items-center justify-end gap-4 md:gap-6 lg:gap-8 text-right">
+          <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-8 text-right">
             {navItems.map((item) => {
-              const className = `font-orbitron text-[10px] md:text-xs tracking-[0.12em] transition-colors whitespace-nowrap ${
-                location.pathname === item.path
-                  ? 'text-frost'
-                  : 'text-white/60 hover:text-white'
-              }`
+              const isContact = item.path === '/contact'
+              const isActive = location.pathname === item.path
+              const className = isContact
+                ? `px-4 py-2 border font-orbitron text-[10px] xl:text-xs tracking-[0.12em] transition-all whitespace-nowrap ${
+                    isActive
+                      ? 'border-frost/60 bg-frost/10 text-frost'
+                      : 'border-frost/30 text-white/80 hover:border-frost/60 hover:bg-frost/5 hover:text-frost'
+                  }`
+                : `font-orbitron text-[10px] xl:text-xs tracking-[0.12em] transition-colors whitespace-nowrap ${
+                    isActive ? 'text-frost' : 'text-white/60 hover:text-white'
+                  }`
 
               return item.href ? (
                 <a
@@ -81,7 +86,7 @@ function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 border border-frost/30 text-white/80 hover:border-frost/50 hover:text-white transition-colors"
+            className="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-frost/30 text-white/80 hover:border-frost/50 hover:text-white transition-colors"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle navigation"
           >
@@ -96,14 +101,20 @@ function Navigation() {
 
       {/* Mobile Drawer */}
       {menuOpen && (
-        <div className="md:hidden bg-dark-900/95 backdrop-blur-sm border-t border-frost/10">
+        <div className="lg:hidden bg-dark-900/95 backdrop-blur-sm border-t border-frost/10">
           <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2">
             {navItems.map((item) => {
-              const className = `font-orbitron text-xs tracking-[0.14em] py-2 border-b border-white/5 ${
-                location.pathname === item.path
-                  ? 'text-frost'
-                  : 'text-white/70 hover:text-white'
-              }`
+              const isContact = item.path === '/contact'
+              const isActive = location.pathname === item.path
+              const className = isContact
+                ? `mt-2 px-4 py-3 border text-center font-orbitron text-xs tracking-[0.14em] transition-all ${
+                    isActive
+                      ? 'border-frost/60 bg-frost/10 text-frost'
+                      : 'border-frost/30 text-white/80 hover:border-frost/60 hover:bg-frost/5 hover:text-frost'
+                  }`
+                : `font-orbitron text-xs tracking-[0.14em] py-2 border-b border-white/5 ${
+                    isActive ? 'text-frost' : 'text-white/70 hover:text-white'
+                  }`
 
               return item.href ? (
                 <a
