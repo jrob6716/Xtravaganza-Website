@@ -3,13 +3,6 @@ import { motion } from 'framer-motion'
 // Xtravaganza catalog highlights with external cover art
 const allReleases = [
   {
-    artist: 'CHICANE',
-    title: 'SALTWATER',
-    year: '1999',
-    image: 'https://i.scdn.co/image/ab67616d0000b2739e96c7e0c89eacdd5bdf4b77',
-    tag: 'CLASSIC'
-  },
-  {
     artist: 'VERACOCHA',
     title: 'CARTE BLANCHE',
     year: '1999',
@@ -21,13 +14,6 @@ const allReleases = [
     title: '1999',
     year: '1998',
     image: 'https://i.scdn.co/image/ab67616d0000b273a2d0bbd10b191ed257a7b82d',
-    tag: 'CLASSIC'
-  },
-  {
-    artist: 'AGNELLI & NELSON',
-    title: 'EL NIÑO',
-    year: '1998',
-    image: 'https://i.scdn.co/image/ab67616d0000b273f5cb9184160a95c31a01d10b',
     tag: 'CLASSIC'
   },
   {
@@ -77,13 +63,6 @@ const allReleases = [
     title: 'GREECE 2000',
     year: '1997',
     image: 'https://i.scdn.co/image/ab67616d0000b273f45810cf5ba2d08fa6e200f4',
-    tag: 'CLASSIC'
-  },
-  {
-    artist: 'AGNELLI & NELSON',
-    title: 'EVERYDAY',
-    year: '2000',
-    image: 'https://i.scdn.co/image/ab67616d0000b2734d7514514a1cb43f8e81273f',
     tag: 'CLASSIC'
   }
 ]

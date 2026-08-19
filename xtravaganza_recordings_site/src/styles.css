@@ -276,8 +276,20 @@ body {
 
 /* Eye logo glow */
 .eye-glow {
+  border: 1px solid rgba(127, 220, 255, 0.2);
+  border-radius: 50%;
+  opacity: 0.9;
   filter: drop-shadow(0 0 30px rgba(127, 220, 255, 0.4)) 
           drop-shadow(0 0 60px rgba(127, 220, 255, 0.2));
+  transition: transform 0.5s ease, opacity 0.5s ease, border-color 0.3s ease, filter 0.5s ease;
+}
+
+.eye-glow:hover {
+  transform: scale(1.03);
+  opacity: 1;
+  border-color: rgba(127, 220, 255, 0.4);
+  filter: drop-shadow(0 0 35px rgba(127, 220, 255, 0.5))
+          drop-shadow(0 0 70px rgba(127, 220, 255, 0.25));
 }
 
 /* Text gradient */

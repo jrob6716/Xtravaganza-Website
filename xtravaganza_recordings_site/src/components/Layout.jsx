@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import eyeMark from '../assets/eye-mark.png'
+import eyeMark from '../assets/round-eye-logo.png'
 
 // Circuit line decorations component
 function CircuitLines({ side = 'left', className = '' }) {

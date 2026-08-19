@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import eyeMark from '../assets/eye-mark.png'
+import eyeMark from '../assets/round-eye-logo.png'
 import alexGoldCover from '../assets/paul-van-dyk-another-way.png'
 import m3ttaCover from '../assets/m3tta-cover.png'
 import { artists } from '../data/content'

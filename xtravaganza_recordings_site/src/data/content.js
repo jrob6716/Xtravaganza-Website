@@ -28,12 +28,4 @@ export const artists = [
     name: 'M3TTA',
     image: null
   },
-  {
-    name: 'AGNELLI & NELSON',
-    image: null
-  },
-  {
-    name: 'CHICANE',
-    image: null
-  }
 ]
