@@ -1,25 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
-// Contact info
-const contactInfo = [
-  {
-    icon: '📍',
-    title: 'ADDRESS',
-    lines: ['123 Electronic Ave', 'London, EC1A 1BB', 'United Kingdom']
-  },
-  {
-    icon: '📧',
-    title: 'EMAIL',
-    lines: ['info@xtravaganza.com', 'demos@xtravaganza.com']
-  },
-  {
-    icon: '📱',
-    title: 'PHONE',
-    lines: ['+44 (0) 20 1234 5678']
-  },
-]
-
 // Social links
 const socialLinks = [
   { name: 'INSTAGRAM', url: 'https://www.instagram.com/xtravaganza_recordings/' },
@@ -162,38 +143,14 @@ export default function Contact() {
             </form>
           </motion.div>
           
-          {/* Contact Info */}
+          {/* Social and Demo Info */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="font-orbitron text-lg md:text-xl tracking-[0.1em] font-semibold text-white mb-6">
-              CONTACT INFO
-            </h2>
-            
-            <div className="space-y-6">
-              {contactInfo.map((info, idx) => (
-                <div key={info.title} className="p-5 bg-dark-800/30 border border-frost/20">
-                  <div className="flex items-start gap-4">
-                    <span className="text-2xl">{info.icon}</span>
-                    <div>
-                      <h3 className="font-orbitron text-xs tracking-[0.15em] font-bold text-frost mb-2">
-                        {info.title}
-                      </h3>
-                      {info.lines.map((line, i) => (
-                        <p key={i} className="text-white/60 text-sm">
-                          {line}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
             {/* Social Links */}
-            <div className="mt-8">
+            <div>
               <h3 className="font-orbitron text-xs tracking-[0.15em] font-bold text-white mb-4">
                 FOLLOW US
               </h3>
