@@ -2,15 +2,39 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import eyeMark from '../assets/round-eye-logo.png'
 
-// Timeline events
 const timeline = [
-  { year: '1997', event: 'XTRAVAGANZA Recordings founded in London' },
-  { year: '1999', event: 'Released Binary Finary "1999" - a trance anthem' },
-  { year: '2001', event: 'Signed Paul Van Dyk to the label' },
-  { year: '2005', event: 'Expanded to international distribution' },
-  { year: '2010', event: 'Launched digital-first release strategy' },
-  { year: '2020', event: 'Celebrated 100+ chart-topping releases' },
-  { year: '2024', event: 'Rebranded with new vision for the future' },
+  {
+    year: '1996',
+    event: 'DJ and producer Alex Gold founds Xtravaganza Recordings. The early EXT catalog launches with releases including Chicane’s “Offshore.”'
+  },
+  {
+    year: '1997',
+    event: 'Armin van Buuren begins his celebrated recording career with “Blue Fear,” alongside releases including Chicane’s “Sunstroke” and “Offshore ’97.”'
+  },
+  {
+    year: '1999',
+    event: 'The catalog enters its XTR era and delivers “Saltwater,” “Everyday,” “L’Esperanza” and “Destination Sunshine.”'
+  },
+  {
+    year: '2000',
+    event: 'Chicane featuring Bryan Adams reaches No. 1 on the UK Singles Chart with “Don’t Give Up.” “Embrace” and “Operation Blade” also join the catalog.'
+  },
+  {
+    year: '2001–02',
+    event: 'The label releases Public Domain’s “Too Many MC’s” and “Rock Da Funky Beats,” followed by Ascension’s “For A Lifetime” and “Everyday 2002.”'
+  },
+  {
+    year: '2009',
+    event: 'Two defining catalog titles return for a new era through “Saltwater 2009” and “Operation Blade 2009.”'
+  },
+  {
+    year: '2021–24',
+    event: 'A new run of digital releases and anniversary mixes includes “Stranded In Paradise,” “Eternal” and Alex Gold’s “A Trip To Tulum.”'
+  },
+  {
+    year: '2026',
+    event: 'The catalog continues with new editions of “For A Lifetime” and “Love Will Come,” alongside Tomski’s “14 Hours to Save the Earth.”'
+  },
 ]
 
 // Stats
