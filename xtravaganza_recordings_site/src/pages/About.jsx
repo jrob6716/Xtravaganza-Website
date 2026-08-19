@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import eyeMark from '../assets/eye-mark.png'
+import eyeMark from '../assets/round-eye-logo.png'
 
 // Timeline events
 const timeline = [
