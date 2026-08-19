@@ -1,7 +1,4 @@
 import { motion } from 'framer-motion'
-import eyeMark from '../assets/eye-mark.png'
-import alexGoldCover from '../assets/paul-van-dyk-another-way.png'
-import m3ttaCover from '../assets/m3tta-cover.png'
 import hoodieImage from '../assets/hoodie.png'
 import tshirtImage from '../assets/tshirt.png'
 
@@ -14,36 +11,11 @@ const merchItems = [
     image: hoodieImage
   },
   {
-    name: 'LIMITED VINYL PRESSING',
-    price: '$40',
-    tag: 'LIMITED',
-    description: '180g vinyl featuring classic XTRAVAGANZA cuts.',
-    image: m3ttaCover
-  },
-  {
     name: 'LOGO TEE',
     price: '$30',
     tag: 'RESTOCKED',
     description: 'Soft cotton tee with front eye-mark and backwordmark.',
     image: tshirtImage
-  },
-  {
-    name: 'GLOW BEANIE',
-    price: '$25',
-    tag: null,
-    description: 'Cuffed beanie with subtle frost embroidery.'
-  },
-  {
-    name: 'POSTER PACK',
-    price: '$22',
-    tag: null,
-    description: 'Set of 3 A2 art prints inspired by our releases.'
-  },
-  {
-    name: 'STICKER SHEET',
-    price: '$8',
-    tag: null,
-    description: 'Holographic stickers with circuit and eye motifs.'
   }
 ]
 
@@ -70,6 +42,18 @@ export default function Merch() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 my-8">
         <div className="tech-line-h" />
       </div>
+
+      {/* Store Status */}
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 max-w-6xl mx-auto">
+        <div className="border border-frost/30 bg-frost/5 px-6 py-5 text-center">
+          <p className="font-orbitron text-sm md:text-base tracking-[0.25em] text-frost">
+            COMING SOON
+          </p>
+          <p className="mt-2 text-xs md:text-sm text-white/50">
+            Official XTRAVAGANZA merchandise is on the way.
+          </p>
+        </div>
+      </section>
 
       {/* Merch Grid */}
       <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">

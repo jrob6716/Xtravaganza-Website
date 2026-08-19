@@ -35,7 +35,7 @@ function Navigation() {
     { path: '/releases', label: 'RELEASES' },
     { path: '/artists', label: 'ARTISTS' },
     { path: '/merch', label: 'MERCH STORE' },
-    { path: '/mix', label: 'THE XTRAVAGANZA MIX' },
+    { href: 'https://soundcloud.com/alexgold-xtravaganza', label: 'THE XTRAVAGANZA MIX' },
     { path: '/about', label: 'ABOUT' },
     { path: '/contact', label: 'CONTACT' },
   ]
@@ -54,19 +54,29 @@ function Navigation() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex flex-wrap items-center justify-end gap-4 md:gap-6 lg:gap-8 text-right">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`font-orbitron text-[10px] md:text-xs tracking-[0.12em] transition-colors whitespace-nowrap ${
-                  location.pathname === item.path
-                    ? 'text-frost'
-                    : 'text-white/60 hover:text-white'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const className = `font-orbitron text-[10px] md:text-xs tracking-[0.12em] transition-colors whitespace-nowrap ${
+                location.pathname === item.path
+                  ? 'text-frost'
+                  : 'text-white/60 hover:text-white'
+              }`
+
+              return item.href ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.path} to={item.path} className={className}>
+                  {item.label}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,20 +98,35 @@ function Navigation() {
       {menuOpen && (
         <div className="md:hidden bg-dark-900/95 backdrop-blur-sm border-t border-frost/10">
           <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMenuOpen(false)}
-                className={`font-orbitron text-xs tracking-[0.14em] py-2 border-b border-white/5 ${
-                  location.pathname === item.path
-                    ? 'text-frost'
-                    : 'text-white/70 hover:text-white'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const className = `font-orbitron text-xs tracking-[0.14em] py-2 border-b border-white/5 ${
+                location.pathname === item.path
+                  ? 'text-frost'
+                  : 'text-white/70 hover:text-white'
+              }`
+
+              return item.href ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className={className}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className={className}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
           </div>
         </div>
       )}

@@ -2,19 +2,6 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { artists } from '../data/content'
 
-// Extended artists list for the full page
-const allArtists = [
-  ...artists,
-  { name: 'PAUL VAN DYK', image: null },
-  { name: 'BINARY FINARY', image: null },
-  { name: 'VERACOCHA', image: null },
-  { name: 'PULSER', image: null },
-  { name: 'ARMIN VAN BUUREN', image: null },
-  { name: 'TIËSTO', image: null },
-  { name: 'ABOVE & BEYOND', image: null },
-  { name: 'FERRY CORSTEN', image: null },
-]
-
 export default function Artists() {
   return (
     <>
@@ -39,10 +26,22 @@ export default function Artists() {
         <div className="tech-line-h" />
       </div>
 
+      {/* Roster Status */}
+      <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 max-w-6xl mx-auto">
+        <div className="border border-frost/30 bg-frost/5 px-6 py-5 text-center">
+          <p className="font-orbitron text-sm md:text-base tracking-[0.25em] text-frost">
+            COMING SOON
+          </p>
+          <p className="mt-2 text-xs md:text-sm text-white/50">
+            New artist profiles, releases, and roster announcements are on the way.
+          </p>
+        </div>
+      </section>
+
       {/* Artists Grid */}
       <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {allArtists.map((artist, idx) => (
+          {artists.map((artist, idx) => (
             <motion.div
               key={artist.name}
               initial={{ opacity: 0, y: 20 }}
