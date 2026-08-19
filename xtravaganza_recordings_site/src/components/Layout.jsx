@@ -125,6 +125,18 @@ function Footer() {
             <a href="#" className="hover:text-white/70 transition-colors">TERMS</a>
           </div>
         </div>
+
+        <div className="mt-6 text-center font-orbitron text-[9px] tracking-[0.12em] text-white/25">
+          Website design exclusively by{' '}
+          <a
+            href="https://dirtyfreqs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/40 hover:text-frost transition-colors"
+          >
+            Dirtyfreqs Media
+          </a>
+        </div>
       </div>
     </footer>
   )
