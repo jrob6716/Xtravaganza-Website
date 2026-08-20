@@ -50,16 +50,23 @@ export default function Artists() {
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               className="artist-card bg-dark-800/30 overflow-hidden group aspect-square cursor-pointer"
             >
-              {/* Artist Photo Placeholder - Full square */}
+              {/* Artist portrait / placeholder - Full square */}
               <div className="relative w-full h-full bg-gradient-to-b from-dark-700 to-dark-900 overflow-hidden">
-                {/* Placeholder gradient pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-frost/5 to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(255,255,255,0.1),transparent_60%)]" />
-                
-                {/* Silhouette placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-3/4 h-3/4 bg-gradient-to-b from-white/10 to-transparent rounded-t-full group-hover:from-white/15 transition-all" />
-                </div>
+                {artist.image ? (
+                  <img
+                    src={artist.image}
+                    alt={`${artist.name} portrait`}
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-br from-frost/5 to-transparent" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(255,255,255,0.1),transparent_60%)]" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-3/4 h-3/4 bg-gradient-to-b from-white/10 to-transparent rounded-t-full group-hover:from-white/15 transition-all" />
+                    </div>
+                  </>
+                )}
                 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-frost/0 group-hover:bg-frost/5 transition-all duration-300" />

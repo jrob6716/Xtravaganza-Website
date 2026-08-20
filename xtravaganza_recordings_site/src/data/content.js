@@ -1,4 +1,5 @@
 // Real roster + catalog from Xtravaganza Recordings
+import alexGoldPortrait from '../assets/alex-gold.jpeg'
 
 export const releases = [
   {
@@ -22,7 +23,7 @@ export const releases = [
 export const artists = [
   {
     name: 'ALEX GOLD',
-    image: null // Will use placeholder
+    image: alexGoldPortrait
   },
   {
     name: 'M3TTA',
