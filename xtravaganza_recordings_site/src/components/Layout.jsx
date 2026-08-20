@@ -190,12 +190,12 @@ export default function Layout({ children }) {
           isHome ? 'circuit-atmosphere-home' : 'circuit-atmosphere-interior'
         }`}
       >
-        {/* Dark gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-black" />
+        {/* Near-black base keeps the circuit detail crisp and restrained */}
+        <div className="absolute inset-0 circuit-black-base" />
         
         {/* Subtle radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_20%,rgba(127,220,255,0.08),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(127,220,255,0.05),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_20%,rgba(127,220,255,0.055),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(127,220,255,0.03),transparent_40%)]" />
         
         {/* Circuit grid pattern */}
         <div className="absolute inset-0 circuit-grid" />
