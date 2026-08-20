@@ -186,41 +186,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="relative px-6 md:px-12 lg:px-20 py-12 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="tech-line-h mb-8" />
-          
-          {/* Map placeholder */}
-          <div className="relative aspect-[21/9] bg-dark-800/50 border border-frost/20 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-dark-700/50 to-dark-900/50" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="font-orbitron text-xl md:text-2xl tracking-[0.2em] text-frost/40 mb-2">
-                  LONDON, UK
-                </div>
-                <div className="font-orbitron text-xs tracking-[0.15em] text-white/40">
-                  51.5074° N, 0.1278° W
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative grid */}
-            <div className="absolute inset-0 circuit-grid opacity-50" />
-            
-            {/* Pulse marker */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-4 h-4 rounded-full bg-frost/60 animate-ping" />
-              <div className="absolute top-0 left-0 w-4 h-4 rounded-full bg-frost" />
-            </div>
-          </div>
-        </motion.div>
-      </section>
     </>
   )
 }
