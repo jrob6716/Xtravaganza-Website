@@ -4,7 +4,6 @@ import releases from '../data/discogsReleases.json'
 import fallbackArtwork from '../assets/round-eye-logo.png'
 
 const PAGE_SIZE = 20
-const formatTabs = ['ALL', 'DIGITAL', 'VINYL', 'CD', 'OTHER']
 const localArtworkBase = `${import.meta.env.BASE_URL}release-artwork/`
 const localArtworkRules = [
   ['everyday 2002', 'everyday-2002.jpg'],
@@ -47,21 +46,11 @@ function getReleaseArtwork(release) {
   return localMatch ? `${localArtworkBase}${localMatch[1]}` : release.image || fallbackArtwork
 }
 
-function getFormatGroup(format = '') {
-  const normalized = (format || '').toLowerCase()
-
-  if (normalized.includes('file')) return 'DIGITAL'
-  if (/12"|10"|7"|\blp\b|vinyl/.test(normalized)) return 'VINYL'
-  if (normalized.includes('cd')) return 'CD'
-  return 'OTHER'
-}
-
 function displayYear(year) {
   return year > 0 ? year : '—'
 }
 
 export default function Releases() {
-  const [activeFormat, setActiveFormat] = useState('ALL')
   const [query, setQuery] = useState('')
   const [sortOrder, setSortOrder] = useState('newest')
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
@@ -69,9 +58,8 @@ export default function Releases() {
   const filteredReleases = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
     const matches = releases.filter((release) => {
-      const matchesFormat = activeFormat === 'ALL' || getFormatGroup(release.format) === activeFormat
       const searchable = `${release.artist} ${release.title} ${release.catno} ${release.year}`.toLowerCase()
-      return matchesFormat && (!normalizedQuery || searchable.includes(normalizedQuery))
+      return !normalizedQuery || searchable.includes(normalizedQuery)
     })
 
     return [...matches].sort((a, b) => {
@@ -79,11 +67,11 @@ export default function Releases() {
       const bYear = b.year || (sortOrder === 'newest' ? -1 : 9999)
       return sortOrder === 'newest' ? bYear - aYear || b.id - a.id : aYear - bYear || a.id - b.id
     })
-  }, [activeFormat, query, sortOrder])
+  }, [query, sortOrder])
 
   useEffect(() => {
     setVisibleCount(PAGE_SIZE)
-  }, [activeFormat, query, sortOrder])
+  }, [query, sortOrder])
 
   const visibleReleases = filteredReleases.slice(0, visibleCount)
   const remainingCount = filteredReleases.length - visibleReleases.length
@@ -120,24 +108,6 @@ export default function Releases() {
           transition={{ duration: 0.4, delay: 0.2 }}
           className="space-y-4"
         >
-          <div className="flex flex-wrap gap-2 md:gap-3" aria-label="Filter releases by format">
-            {formatTabs.map((tab) => (
-              <button
-                key={tab}
-                type="button"
-                onClick={() => setActiveFormat(tab)}
-                aria-pressed={activeFormat === tab}
-                className={`px-4 py-2 text-[10px] md:text-xs tracking-[0.15em] font-orbitron transition-all duration-300 border ${
-                  activeFormat === tab
-                    ? 'border-frost/50 bg-frost/10 text-frost'
-                    : 'border-frost/20 bg-transparent text-white/60 hover:border-frost/40 hover:text-white'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] gap-3">
             <label className="relative">
               <span className="sr-only">Search the release catalog</span>
@@ -208,12 +178,6 @@ export default function Releases() {
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
 
-                  <div className="absolute top-3 right-3">
-                    <span className="px-2 py-1 text-[9px] tracking-[0.1em] font-orbitron bg-dark-900/80 border border-frost/40 text-frost backdrop-blur-sm">
-                      {getFormatGroup(release.format)}
-                    </span>
-                  </div>
-
                 </div>
 
                 <div className="p-3 md:p-4">
@@ -250,7 +214,6 @@ export default function Releases() {
               type="button"
               onClick={() => {
                 setQuery('')
-                setActiveFormat('ALL')
               }}
               className="mt-5 px-5 py-2 text-[10px] tracking-[0.15em] font-orbitron border border-frost/30 text-frost hover:bg-frost/10 transition-colors"
             >
