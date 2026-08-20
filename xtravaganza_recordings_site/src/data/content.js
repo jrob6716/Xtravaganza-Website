@@ -1,5 +1,6 @@
 // Real roster + catalog from Xtravaganza Recordings
 import alexGoldPortrait from '../assets/alex-gold.jpeg'
+import m3ttaPortrait from '../assets/m3tta.jpg'
 
 export const releases = [
   {
@@ -27,6 +28,6 @@ export const artists = [
   },
   {
     name: 'M3TTA',
-    image: null
+    image: m3ttaPortrait
   },
 ]
