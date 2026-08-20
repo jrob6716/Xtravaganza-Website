@@ -40,7 +40,7 @@ export default function Artists() {
 
       {/* Artists Grid */}
       <section className="relative px-4 sm:px-6 md:px-12 lg:px-20 py-8 max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 gap-4 md:gap-6 max-w-xl mx-auto">
           {artists.map((artist, idx) => (
             <motion.div
               key={artist.name}
